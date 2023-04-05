@@ -1,0 +1,20 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+			const wss = new WebSocket("wss://kindly-wary-senior.anvil.app/_/ws/?s=DB46HU4OCYFSACV7VI3RGWOAG3FTOQIW=pzRGmHOy2scyeZyWosjSbeY98Dd8");
+			wss.onopen = (socket) => {
+			  console.log("connected");
+			  wss.send("hi");
+			};
+			
+			wss.onmessage = (data) => {
+			  console.log(data);
+			};
+			
+			wss.onclose = () => {
+			  console.log("closed");
+			};
+		</script>
+	</body>
+</html>
